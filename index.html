@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3808373705183829"
+     crossorigin="anonymous"></script>
+    <title>UtilityCrate - Image Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50">
+ <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+          <!-- नया PNG लोगो कोड -->
+<div class="flex items-center">
+    <img src="favicon-32x32.png" class="h-8 w-8" alt="UtilityCrate Logo">
+    <span class="ml-2 text-xl font-bold text-gray-800">UtilityCrate</span>
+</div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="text-primary font-medium">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-primary transition">About Us</a>
+                <a href="#tools" class="text-gray-600 hover:text-primary transition">Tools</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#" class="block py-2 text-primary font-medium">Home</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-primary transition">About Us</a>
+            <a href="#tools" class="block py-2 text-gray-600 hover:text-primary transition">Tools</a>
+            <a href="contact.html" class="block py-2 text-gray-600 hover:text-primary transition">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Image Tools</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tool 2: Image Compressor -->
+                <div class="group block bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border border-gray-100 hover:border-primary">
+                    <div class="text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-primary">Image Compressor</h3>
+                    <p class="text-gray-600">Compress images to your desired file size.</p>
+                    <div class="mt-4">
+                        <input type="file" id="image-upload-compressor" accept="image/*" class="mb-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                        <input type="number" id="target-size-compressor" placeholder="Target size (KB)" class="mb-2 block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                        <button id="compress-button" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Compress</button>
+                        <div id="compressed-image-output" class="mt-4 text-center"></div>
+                    </div>
+                </div>
+                <!-- Tool 3: Image Resizer -->
+<div class="group block bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border border-gray-100 hover:border-primary">
+    <div class="text-primary mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h2m4 0h6a2 2 0 002-2v-5a2 2 0 00-2-2h-2m-4 0H6a2 2 0 00-2 2v5a2 2 0 002 2h2m4 0V4m0 0L8 8m4-4l4 4" />
+        </svg>
+    </div>
+    <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-primary">Image Resizer</h3>
+    <p class="text-gray-600">Resize images to your desired dimensions.</p>
+    <div class="mt-4">
+        <input type="file" id="image-upload-resizer" accept="image/*" class="mb-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+        <input type="number" id="resize-width" placeholder="Width (px)" class="mb-2 block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+        <input type="number" id="resize-height" placeholder="Height (px)" class="mb-2 block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+        <button id="resize-button" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Resize</button>
+        <div id="resized-image-output" class="mt-4 text-center"></div>
+    </div>
+</div>
+<script>
+  document.getElementById('resize-button').addEventListener('click', () => {
+    const fileInput = document.getElementById('image-upload-resizer');
+    const width = parseInt(document.getElementById('resize-width').value);
+    const height = parseInt(document.getElementById('resize-height').value);
+    const output = document.getElementById('resized-image-output');
+
+    if (!fileInput.files[0] || !width || !height) {
+      return alert('Please select an image and enter both width and height.');
+    }
+
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+      const img = new Image();
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        canvas.toBlob(function(blob) {
+          const resizedUrl = URL.createObjectURL(blob);
+          output.innerHTML = `
+            <p class="text-sm text-gray-700">Resized to: ${width}x${height} px</p>
+            <img src="${resizedUrl}" class="max-w-full rounded shadow mb-2 mx-auto"/>
+            <a href="${resizedUrl}" download="resized-image.jpg" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Download Image</a>
+          `;
+        }, 'image/jpeg');
+      };
+      img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  });
+</script>
+
+<!-- Tool 4: PNG ⇄ JPG Converter -->
+<div class="group block bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300 border border-gray-100 hover:border-primary">
+    <div class="text-primary mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16m6 0v2m0-2H9m6 0V8m0 8H9" />
+        </svg>
+    </div>
+    <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-primary">PNG ⇄ JPG Converter</h3>
+    <p class="text-gray-600">Convert images between PNG and JPG formats.</p>
+    <div class="mt-4">
+        <input type="file" id="image-upload-converter" accept="image/png, image/jpeg" class="mb-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+        <select id="convert-format" class="mb-2 block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+            <option value="jpg">Convert to JPG</option>
+            <option value="png">Convert to PNG</option>
+        </select>
+        <button id="convert-button" class="w-full bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Convert</button>
+        <div id="converted-image-output" class="mt-4 text-center"></div>
+    </div>
+</div>
+<!-- Tool 5: WebP ⇄ JPG Converter -->
+<div class="group block bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition duration-300 border border-gray-100 hover:border-blue-600">
+    <div class="text-blue-600 mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553 2.276a1 1 0 010 1.448L15 16m-6-6l-4.553 2.276a1 1 0 000 1.448L9 16m6 0v2m0-2H9m6 0V8m0 8H9" />
+        </svg>
+    </div>
+    <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-blue-600">WebP ⇄ JPG Converter</h3>
+    <p class="text-gray-600">Convert images between WebP and JPG formats easily.</p>
+    <div class="mt-4">
+        <input type="file" id="image-upload-webp" accept="image/webp, image/jpeg" class="mb-2 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+        <select id="webp-convert-format" class="mb-2 block w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+            <option value="jpg">Convert to JPG</option>
+            <option value="webp">Convert to WebP</option>
+        </select>
+        <button id="webp-convert-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Convert</button>
+        <div id="webp-converted-output" class="mt-4 text-center"></div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Logo and Description -->
+                 <div>
+                    <div class="flex items-center">
+    <img src="favicon-32x32.png" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">UtilityCrate</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Your one-stop solution for all daily calculation needs.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#tools" class="text-gray-400 hover:text-white transition">Tools</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 UtilityCrate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    <!-- Browser Image Compression Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/browser-image-compression/2.0.0/browser-image-compression.js"></script>
+ <!-- Image Compressor Script -->
+    <script src="image-compressor.js"></script>
+     <script src="JPG-Converter.js"></script>
+      <script src="WebP-converter.js"></script>
+</body>
+</html>
